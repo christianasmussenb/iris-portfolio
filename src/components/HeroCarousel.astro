@@ -1,0 +1,41 @@
+---
+/**
+ * Carrusel ultra-simple (scroll-snap) — 0 dependencias.
+ * Props:
+ *  - items: array de { title, subtitle, href, pills: string[] }
+ */
+const { items = [] } = Astro.props;
+---
+<style>
+  .wrap { position: relative; }
+  .rail {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(280px, 1fr);
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 4px 2px 10px;
+  }
+  .rail::-webkit-scrollbar { height: 10px; }
+  .rail::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.14); border-radius: 999px; }
+  .slide { scroll-snap-align: start; padding: 16px; border-radius: 18px; }
+  .slide h3 { font-size: 18px; margin-bottom: 6px; }
+  .slide p { margin: 0 0 12px; }
+  .pills { display:flex; flex-wrap:wrap; gap: 8px; margin-bottom: 14px; }
+</style>
+
+<div class="wrap">
+  <div class="rail">
+    {items.map((it) => (
+      <a class="card slide" href={it.href}>
+        <h3>{it.title}</h3>
+        <p class="muted">{it.subtitle}</p>
+        <div class="pills">
+          {it.pills?.map((p) => <span class="pill">{p}</span>)}
+        </div>
+        <span class="btn">Ver detalle →</span>
+      </a>
+    ))}
+  </div>
+</div>

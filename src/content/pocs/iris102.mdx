@@ -1,0 +1,53 @@
+---
+title: "Ingesta CSV con Interoperability + persistencia DB"
+subtitle: "Pipeline de carga de archivos y operaciones DB, diseñado para operar con retries y validación."
+repo: "https://github.com/christianasmussenb/iris102"
+repoName: "iris102"
+category: "Interoperability"
+industries:
+  - Interop
+  - ETL
+  - Data
+capabilities:
+  - File ingestion
+  - DB ops
+  - Installer
+featured: false
+updatedAt: "2025-10-22T15:56:32Z"
+---
+## Qué resuelve (mirada negocio)
+
+Pipeline de carga de archivos y operaciones DB, diseñado para operar con retries y validación.
+
+**Dónde encaja**  
+- **Decisores**: impacto en ingresos, eficiencia operativa, control y trazabilidad  
+- **TI**: arquitectura reproducible, APIs, seguridad y ruta a producción
+
+## Solución (qué hace)
+
+- Describe el flujo end-to-end y el resultado observable (demo).
+- Define puntos de integración (APIs, JDBC, servicios, colas).
+- Deja evidencias en clases y módulos clave para revisión técnica.
+
+## Arquitectura
+
+```mermaid
+flowchart LR
+  SRC[CSV / filesystem] --> FS[File Service]
+  FS --> BP[Process & Validación]
+  BP --> BO[DB Operation (MySQLInsert)]
+  BO --> DB[(MySQL/PostgreSQL)]
+```
+
+## Evidencias técnicas (clases representativas)
+
+- `Samples-Integration-SmartTicketing-master/Setup/src/cls/ToCensusGeoServiceBO.cls`
+- `iris/src/demo/prod/Demo.Msg.DBOperationRequest.cls`
+- `iris/src/demo/prod/Demo.Msg.DBOperationResponse.cls`
+- `iris/Installer.cls`
+- `iris/Installer.new.cls`
+- `iris/src/demo/bo/MySQLInsert.cls`
+
+## Próximo paso recomendado
+
+- **PoC guiada (2–4 semanas)**: definición de criterios de éxito + demo + backlog de hardening/producción.

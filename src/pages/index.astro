@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroCarousel from "../components/HeroCarousel.astro";
+import { getCollection } from "astro:content";
+
+const all = await getCollection("pocs");
+const featured = all.filter(p => p.data.featured).slice(0, 6);
+
+const items = featured.map(p => ({
+  title: p.data.title,
+  subtitle: p.data.subtitle,
+  href: `/pocs/${p.slug}`,
+  pills: [p.data.category, ...p.data.capabilities.slice(0,2)],
+}));
+---
+<BaseLayout>
+  <section class="card" style="padding: 18px; border-radius: 22px;">
+    <div style="display:flex; gap:14px; align-items:flex-start; flex-wrap:wrap;">
+      <div style="flex: 1 1 520px;">
+        <h1 style="font-size: 34px; letter-spacing:-0.3px; margin-bottom: 10px;">
+          Soluciones empresariales sobre <span style="background: linear-gradient(135deg,var(--brand),var(--brand2)); -webkit-background-clip:text; color:transparent;">InterSystems IRIS</span>
+        </h1>
+        <p class="muted" style="margin:0 0 14px; line-height:1.65;">
+          Portafolio de PoCs y aceleradores listos para demostración: <b>integración</b>, <b>interoperabilidad</b>, <b>analytics</b> y <b>ML</b>.
+          Diseñado para que equipos funcionales y técnicos puedan evaluar valor y arquitectura en la misma conversación.
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="/pocs">Explorar PoCs</a>
+          <a class="btn" href="/contact">Agendar demo</a>
+        </div>
+      </div>
+
+      <div style="flex: 1 1 360px;">
+        <div class="card" style="padding: 14px; border-radius: 18px;">
+          <div style="font-weight:700; margin-bottom: 8px;">Capacidades típicas</div>
+          <div style="display:flex; flex-wrap:wrap; gap: 8px;">
+            <span class="pill">IRIS Interoperability</span>
+            <span class="pill">REST / APIs</span>
+            <span class="pill">Cubes / BI</span>
+            <span class="pill">IntegratedML</span>
+            <span class="pill">SAP / JDBC / Gateway</span>
+            <span class="pill">CSP Web Apps</span>
+          </div>
+        </div>
+        <div style="height:12px;"></div>
+        <div class="card" style="padding: 14px; border-radius: 18px;">
+          <div style="font-weight:700; margin-bottom: 6px;">Entrega rápida</div>
+          <div class="muted" style="line-height:1.6;">
+            PoC típica: <b>2–4 semanas</b>, con demo, repositorio, documentación y plan de escalamiento.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top: 18px;">
+    <h2 style="font-size: 18px; margin: 0 0 10px;">Destacados</h2>
+    <HeroCarousel items={items} />
+  </section>
+
+  <section style="margin-top: 18px;">
+    <div class="card" style="padding: 16px; border-radius: 22px;">
+      <h2 style="font-size: 18px; margin-bottom: 10px;">¿Cómo usamos IRIS para generar impacto?</h2>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;">
+        <div class="card" style="padding: 14px;">
+          <div style="font-weight:700;">Integración de sistemas</div>
+          <div class="muted">SAP, eCommerce, CRMs, bases de datos — con trazabilidad y operación.</div>
+        </div>
+        <div class="card" style="padding: 14px;">
+          <div style="font-weight:700;">Interoperabilidad y ETL</div>
+          <div class="muted">Pipelines controlados con colas, retries, validación y auditoría.</div>
+        </div>
+        <div class="card" style="padding: 14px;">
+          <div style="font-weight:700;">Analytics & BI</div>
+          <div class="muted">Cubes, facts, modelos dimensionales y reporting de gestión.</div>
+        </div>
+        <div class="card" style="padding: 14px;">
+          <div style="font-weight:700;">ML aplicado</div>
+          <div class="muted">Modelos integrados al flujo operacional (ej. predicción de no-show).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

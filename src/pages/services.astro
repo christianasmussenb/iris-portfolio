@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Servicios | MyAllSupport | IRIS Solutions">
+  <section class="card" style="padding: 16px; border-radius: 22px;">
+    <h1 style="font-size: 22px; margin-bottom: 6px;">Servicios sobre InterSystems IRIS</h1>
+    <p class="muted" style="margin:0; line-height:1.7;">
+      Enfoque “rápido y comprobable”: PoCs breves, alto impacto, y ruta clara a producción.
+    </p>
+  </section>
+
+  <section style="margin-top: 12px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;">
+    <div class="card" style="padding: 14px;">
+      <h2 style="font-size: 16px; margin-bottom: 6px;">PoC (2–4 semanas)</h2>
+      <ul class="muted" style="margin:0; line-height:1.75;">
+        <li>Definición de caso de uso + criterios de éxito</li>
+        <li>Demo funcional + arquitectura + backlog</li>
+        <li>Repo + documentación + plan de escalamiento</li>
+      </ul>
+    </div>
+    <div class="card" style="padding: 14px;">
+      <h2 style="font-size: 16px; margin-bottom: 6px;">Integración & Interop</h2>
+      <ul class="muted" style="margin:0; line-height:1.75;">
+        <li>SAP / JDBC / APIs / Webhooks</li>
+        <li>Productions, retries, monitoreo y trazabilidad</li>
+        <li>Hardening y operación</li>
+      </ul>
+    </div>
+    <div class="card" style="padding: 14px;">
+      <h2 style="font-size: 16px; margin-bottom: 6px;">Analytics & ML</h2>
+      <ul class="muted" style="margin:0; line-height:1.75;">
+        <li>Modelos dimensionales / Cubos</li>
+        <li>IntegratedML aplicado al flujo operacional</li>
+        <li>Gobierno de datos + seguridad</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

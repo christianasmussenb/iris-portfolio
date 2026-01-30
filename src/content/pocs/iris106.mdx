@@ -1,0 +1,54 @@
+---
+title: "ETL + Cubos de facturación/cartera desde SAP"
+subtitle: "Construcción de facts + cubos (cobranza/facturación) alimentados desde SAP."
+repo: "https://github.com/christianasmussenb/iris106"
+repoName: "iris106"
+category: "Analytics"
+industries:
+  - BI
+  - ETL
+  - SAP
+capabilities:
+  - ETL
+  - Fact tables
+  - Cubes
+featured: false
+updatedAt: "2026-01-28T20:28:20Z"
+---
+## Qué resuelve (mirada negocio)
+
+Construcción de facts + cubos (cobranza/facturación) alimentados desde SAP.
+
+**Dónde encaja**  
+- **Decisores**: impacto en ingresos, eficiencia operativa, control y trazabilidad  
+- **TI**: arquitectura reproducible, APIs, seguridad y ruta a producción
+
+## Solución (qué hace)
+
+- Describe el flujo end-to-end y el resultado observable (demo).
+- Define puntos de integración (APIs, JDBC, servicios, colas).
+- Deja evidencias en clases y módulos clave para revisión técnica.
+
+## Arquitectura
+
+```mermaid
+flowchart LR
+  SAP[SAP] --> CLI[SAP Client]
+  CLI --> ETL[FactBuilder + ETL]
+  ETL --> FACT[FactInvoice]
+  FACT --> CUBE[CuboFacturacionCartera]
+  CUBE --> WEB[ProcessPage / Reporting]
+```
+
+## Evidencias técnicas (clases representativas)
+
+- `src/SISS/BI/CuboFacturacionCartera.cls`
+- `src/SISS/BI/CubeUtil.cls`
+- `src/SISS/Etl/FactBuilder.cls`
+- `src/SISS/SAP/Client.cls`
+- `src/SISS/St/FactInvoice.cls`
+- `src/SISS/Web/ProcessPage.cls`
+
+## Próximo paso recomendado
+
+- **PoC guiada (2–4 semanas)**: definición de criterios de éxito + demo + backlog de hardening/producción.

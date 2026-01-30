@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
+
+const { slug } = Astro.params;
+const entry = await getEntry("pocs", slug);
+if (!entry) throw new Error("PoC not found: " + slug);
+
+const { Content, data } = entry;
+---
+<BaseLayout title={`${data.title} | MyAllSupport | IRIS Solutions`} description={data.subtitle}>
+  <section class="card" style="padding: 16px; border-radius: 22px;">
+    <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+      <div>
+        <h1 style="font-size: 22px; margin-bottom: 4px;">{data.title}</h1>
+        <div class="muted">{data.subtitle}</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top: 10px;">
+          <span class="pill">{data.category}</span>
+          {data.capabilities.map((c) => <span class="pill">{c}</span>)}
+        </div>
+      </div>
+      <a class="btn" href={data.repo} target="_blank" rel="noreferrer">Ver repo →</a>
+    </div>
+  </section>
+
+  <section class="card markdown" style="padding: 16px; border-radius: 22px; margin-top: 12px;">
+    <Content />
+  </section>
+
+  <section class="card" style="padding: 16px; border-radius: 22px; margin-top: 12px;">
+    <h2 style="font-size: 16px; margin-bottom: 8px;">¿Te interesa un piloto?</h2>
+    <div class="muted" style="line-height:1.7;">
+      Podemos transformar este PoC en piloto productivo (seguridad, observabilidad, hardening y operación).
+      <a href="/contact">Conversemos</a>.
+    </div>
+  </section>
+</BaseLayout>

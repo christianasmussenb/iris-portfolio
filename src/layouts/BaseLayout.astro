@@ -1,0 +1,69 @@
+---
+const { title = "MyAllSupport | IRIS Solutions", description = "Portafolio de soluciones y PoCs sobre InterSystems IRIS." } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <style>
+      :root {
+        --bg: #0b1020;
+        --card: rgba(255,255,255,0.06);
+        --border: rgba(255,255,255,0.10);
+        --text: rgba(255,255,255,0.92);
+        --muted: rgba(255,255,255,0.72);
+        --brand: #7dd3fc;
+        --brand2: #a78bfa;
+      }
+      body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background: radial-gradient(1200px 700px at 10% 10%, rgba(125,211,252,0.15), transparent 60%), radial-gradient(1100px 700px at 90% 30%, rgba(167,139,250,0.12), transparent 60%), var(--bg); color: var(--text); }
+      a { color: inherit; text-decoration: none; }
+      .container { max-width: 1120px; margin: 0 auto; padding: 28px 18px 64px; }
+      header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding: 10px 0 18px; }
+      .brand { display:flex; gap:10px; align-items:center; }
+      .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--brand), var(--brand2)); box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+      nav { display:flex; gap:14px; flex-wrap: wrap; }
+      nav a { padding: 8px 10px; border: 1px solid transparent; border-radius: 10px; color: var(--muted); }
+      nav a:hover { border-color: var(--border); color: var(--text); background: rgba(255,255,255,0.03); }
+      .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; box-shadow: 0 18px 40px rgba(0,0,0,0.22); }
+      .btn { display:inline-flex; align-items:center; gap:10px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); background: rgba(255,255,255,0.04); color: var(--text); }
+      .btn:hover { background: rgba(255,255,255,0.07); }
+      .pill { display:inline-flex; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+      h1,h2,h3 { margin:0; }
+      .muted { color: var(--muted); }
+      footer { margin-top: 44px; color: var(--muted); font-size: 13px; }
+      pre { overflow:auto; padding: 14px; border-radius: 14px; border: 1px solid var(--border); background: rgba(0,0,0,0.25); }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+      .markdown :is(p,li){ color: var(--muted); line-height: 1.6; }
+      .markdown a{ color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a class="brand" href="/">
+          <div class="logo"></div>
+          <div>
+            <div style="font-weight:700; letter-spacing:0.2px;">MyAllSupport | IRIS Solutions</div>
+            <div class="muted" style="font-size:12px;">PoCs y soluciones sobre InterSystems IRIS</div>
+          </div>
+        </a>
+        <nav>
+          <a href="/pocs">PoCs</a>
+          <a href="/services">Servicios</a>
+          <a href="/contact">Contacto</a>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer>
+        © {new Date().getFullYear()} MyAllSupport · Built with Astro · InterSystems IRIS-focused portfolio
+      </footer>
+    </div>
+  </body>
+</html>

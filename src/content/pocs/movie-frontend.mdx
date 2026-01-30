@@ -1,0 +1,43 @@
+---
+title: "Sample REST endpoint (personREST)"
+subtitle: "Ejemplo mínimo de servicio REST en ObjectScript."
+repo: "https://github.com/christianasmussenb/movie-frontend"
+repoName: "movie-frontend"
+category: "Demo"
+industries:
+  - Sample
+  - REST
+capabilities:
+  - Simple REST class
+featured: false
+updatedAt: "2025-07-28T15:08:58Z"
+---
+## Qué resuelve (mirada negocio)
+
+Ejemplo mínimo de servicio REST en ObjectScript.
+
+**Dónde encaja**  
+- **Decisores**: impacto en ingresos, eficiencia operativa, control y trazabilidad  
+- **TI**: arquitectura reproducible, APIs, seguridad y ruta a producción
+
+## Solución (qué hace)
+
+- Describe el flujo end-to-end y el resultado observable (demo).
+- Define puntos de integración (APIs, JDBC, servicios, colas).
+- Deja evidencias en clases y módulos clave para revisión técnica.
+
+## Arquitectura
+
+```mermaid
+flowchart LR
+  Browser --> REST[personREST.cls]
+  REST --> IRIS[IRIS]
+```
+
+## Evidencias técnicas (clases representativas)
+
+- `src/sample/personREST.cls`
+
+## Próximo paso recomendado
+
+- **PoC guiada (2–4 semanas)**: definición de criterios de éxito + demo + backlog de hardening/producción.

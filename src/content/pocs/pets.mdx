@@ -1,0 +1,53 @@
+---
+title: "PETS demo: booking + disponibilidad + notificaciones"
+subtitle: "Demostración de arquitectura de servicios y APIs REST en IRIS para un dominio simple."
+repo: "https://github.com/christianasmussenb/pets"
+repoName: "pets"
+category: "Web Apps"
+industries:
+  - Demo
+  - REST
+  - Services
+capabilities:
+  - Booking
+  - Availability
+  - Email
+featured: false
+updatedAt: "2026-01-28T20:29:10Z"
+---
+## Qué resuelve (mirada negocio)
+
+Demostración de arquitectura de servicios y APIs REST en IRIS para un dominio simple.
+
+**Dónde encaja**  
+- **Decisores**: impacto en ingresos, eficiencia operativa, control y trazabilidad  
+- **TI**: arquitectura reproducible, APIs, seguridad y ruta a producción
+
+## Solución (qué hace)
+
+- Describe el flujo end-to-end y el resultado observable (demo).
+- Define puntos de integración (APIs, JDBC, servicios, colas).
+- Deja evidencias en clases y módulos clave para revisión técnica.
+
+## Arquitectura
+
+```mermaid
+flowchart LR
+  App[Cliente] --> API[REST APIs]
+  API --> SVC[Services (Booking/Email)]
+  SVC --> DB[(IRIS Persistencia)]
+  SVC --> Notif[Notifications]
+```
+
+## Evidencias técnicas (clases representativas)
+
+- `Demo/REST/NotificationsAPI.cls`
+- `Demo/REST/AvailabilityAPI.cls`
+- `Demo/REST/OwnerBookingManager.cls`
+- `Demo/REST/WalkerBookingManager.cls`
+- `Demo/PETS/Services/BookingService.cls`
+- `Demo/PETS/Services/EmailService.cls`
+
+## Próximo paso recomendado
+
+- **PoC guiada (2–4 semanas)**: definición de criterios de éxito + demo + backlog de hardening/producción.

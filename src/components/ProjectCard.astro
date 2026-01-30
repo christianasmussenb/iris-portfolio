@@ -1,0 +1,23 @@
+---
+const { p } = Astro.props;
+---
+<style>
+  .cardx { padding: 14px; border-radius: 18px; display:flex; flex-direction:column; gap:10px; }
+  .title { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+  .title h3 { font-size: 16px; }
+  .tags { display:flex; flex-wrap:wrap; gap: 8px; }
+  .meta { font-size: 12px; color: var(--muted); }
+</style>
+
+<a class="card cardx" href={`/pocs/${p.slug}`}>
+  <div class="title">
+    <h3>{p.data.title}</h3>
+    {p.data.featured ? <span class="pill">Featured</span> : null}
+  </div>
+  <div class="meta">{p.data.category} · {p.data.repoName}</div>
+  <div class="tags">
+    {p.data.capabilities?.slice(0,4).map((t) => <span class="pill">{t}</span>)}
+  </div>
+  <div class="muted" style="line-height:1.5;">{p.data.subtitle}</div>
+  <span class="btn" style="width:max-content;">Abrir →</span>
+</a>

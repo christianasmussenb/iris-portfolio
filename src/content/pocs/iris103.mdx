@@ -1,0 +1,56 @@
+---
+title: "Abandoned Cart Recovery (VTEX ↔ SAP ↔ Email)"
+subtitle: "Automatiza la recuperación de carritos abandonados con webhooks, verificación SAP y comunicación al cliente."
+repo: "https://github.com/christianasmussenb/iris103"
+repoName: "iris103"
+category: "Retail"
+industries:
+  - Retail
+  - eCommerce
+  - Integration
+capabilities:
+  - VTEX
+  - SAP JDBC
+  - Interoperability
+  - Email
+featured: true
+updatedAt: "2026-01-28T20:29:54Z"
+---
+## Qué resuelve (mirada negocio)
+
+Automatiza la recuperación de carritos abandonados con webhooks, verificación SAP y comunicación al cliente.
+
+**Dónde encaja**  
+- **Decisores**: impacto en ingresos, eficiencia operativa, control y trazabilidad  
+- **TI**: arquitectura reproducible, APIs, seguridad y ruta a producción
+
+## Solución (qué hace)
+
+- Describe el flujo end-to-end y el resultado observable (demo).
+- Define puntos de integración (APIs, JDBC, servicios, colas).
+- Deja evidencias en clases y módulos clave para revisión técnica.
+
+## Arquitectura
+
+```mermaid
+flowchart LR
+  VTEX[VTEX] -->|Webhook| API[VTEXWebhookAPI (REST)]
+  API --> BP[BP CartRecovery]
+  BP --> SAP[SAP via JDBC / BO SAPInventory]
+  BP --> CRM[BO CRMEmail]
+  BP --> STG[BO Storage / Persistencia]
+  CRM --> Email[Email de recuperación]
+```
+
+## Evidencias técnicas (clases representativas)
+
+- `src/ECOM/BO/SAPInventory.cls`
+- `src/ECOM/REST/VTEXWebhookAPI.cls`
+- `src/ECOM/BO/CRMEmail.cls`
+- `src/ECOM/Production.cls`
+- `src/ECOM/BO/Storage.cls`
+- `src/ECOM/BP/CartRecovery.cls`
+
+## Próximo paso recomendado
+
+- **PoC guiada (2–4 semanas)**: definición de criterios de éxito + demo + backlog de hardening/producción.

@@ -1,0 +1,51 @@
+---
+title: "Portal CSP: login/home/feedback (GCSP pages)"
+subtitle: "Base de aplicación web con páginas CSP (login, home, about, feedback)."
+repo: "https://github.com/christianasmussenb/iris107"
+repoName: "iris107"
+category: "Web Apps"
+industries:
+  - Web
+  - CSP
+  - UX
+capabilities:
+  - CSP pages
+  - Login/Home
+featured: false
+updatedAt: "2026-01-28T20:28:44Z"
+---
+## Qué resuelve (mirada negocio)
+
+Base de aplicación web con páginas CSP (login, home, about, feedback).
+
+**Dónde encaja**  
+- **Decisores**: impacto en ingresos, eficiencia operativa, control y trazabilidad  
+- **TI**: arquitectura reproducible, APIs, seguridad y ruta a producción
+
+## Solución (qué hace)
+
+- Describe el flujo end-to-end y el resultado observable (demo).
+- Define puntos de integración (APIs, JDBC, servicios, colas).
+- Deja evidencias en clases y módulos clave para revisión técnica.
+
+## Arquitectura
+
+```mermaid
+flowchart LR
+  Browser[Usuario] --> CSP[GCSP Pages]
+  CSP --> Auth[LoginPage / BasePage]
+  Auth --> Home[HomePage / AboutPage]
+```
+
+## Evidencias técnicas (clases representativas)
+
+- `src/GCSP/AboutPage.cls`
+- `src/GCSP/BasePage.cls`
+- `src/GCSP/FeedbackPage.cls`
+- `src/GCSP/HelloPage.cls`
+- `src/GCSP/HomePage.cls`
+- `src/GCSP/LoginPage.cls`
+
+## Próximo paso recomendado
+
+- **PoC guiada (2–4 semanas)**: definición de criterios de éxito + demo + backlog de hardening/producción.

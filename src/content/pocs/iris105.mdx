@@ -1,0 +1,56 @@
+---
+title: "No-Show Predictor para agendas clínicas (IntegratedML)"
+subtitle: "Predicción de riesgo de inasistencia (no-show) integrada al flujo operacional de agenda."
+repo: "https://github.com/christianasmussenb/iris105"
+repoName: "iris105"
+category: "Healthcare"
+industries:
+  - Healthcare
+  - ML
+  - Scheduling
+capabilities:
+  - IntegratedML
+  - No-show
+  - REST
+  - Domain model
+featured: true
+updatedAt: "2026-01-30T14:33:18Z"
+---
+## Qué resuelve (mirada negocio)
+
+Predicción de riesgo de inasistencia (no-show) integrada al flujo operacional de agenda.
+
+**Dónde encaja**  
+- **Decisores**: impacto en ingresos, eficiencia operativa, control y trazabilidad  
+- **TI**: arquitectura reproducible, APIs, seguridad y ruta a producción
+
+## Solución (qué hace)
+
+- Describe el flujo end-to-end y el resultado observable (demo).
+- Define puntos de integración (APIs, JDBC, servicios, colas).
+- Deja evidencias en clases y módulos clave para revisión técnica.
+
+## Arquitectura
+
+```mermaid
+flowchart LR
+  U[Operaciones / Agenda] --> API[REST No-Show Service]
+  API --> IRIS[IRIS + IntegratedML]
+  IRIS --> DOM[Modelo dominio<br/>Paciente / Cita / Box]
+  IRIS --> FEAT[Features & scoring]
+  FEAT --> PRED[Predicción riesgo]
+  PRED --> API --> U
+```
+
+## Evidencias técnicas (clases representativas)
+
+- `src/IRIS105/REST/NoShowService.cls`
+- `src/GCSP/Basic.cls`
+- `src/IRIS105/Domain/Appointment.cls`
+- `src/IRIS105/Domain/AppointmentRisk.cls`
+- `src/IRIS105/Domain/Box.cls`
+- `src/IRIS105/Domain/Patient.cls`
+
+## Próximo paso recomendado
+
+- **PoC guiada (2–4 semanas)**: definición de criterios de éxito + demo + backlog de hardening/producción.

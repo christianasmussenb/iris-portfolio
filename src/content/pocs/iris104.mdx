@@ -1,0 +1,54 @@
+---
+title: "Operación SAP desde IRIS: gestión de usuarios"
+subtitle: "Lista, verifica, bloquea y desbloquea usuarios SAP desde IRIS con trazabilidad."
+repo: "https://github.com/christianasmussenb/iris104"
+repoName: "iris104"
+category: "SAP"
+industries:
+  - SAP
+  - Security
+  - Integration
+capabilities:
+  - User Management
+  - Gateway Java
+  - REST
+featured: true
+updatedAt: "2025-11-14T21:05:38Z"
+---
+## Qué resuelve (mirada negocio)
+
+Lista, verifica, bloquea y desbloquea usuarios SAP desde IRIS con trazabilidad.
+
+**Dónde encaja**  
+- **Decisores**: impacto en ingresos, eficiencia operativa, control y trazabilidad  
+- **TI**: arquitectura reproducible, APIs, seguridad y ruta a producción
+
+## Solución (qué hace)
+
+- Describe el flujo end-to-end y el resultado observable (demo).
+- Define puntos de integración (APIs, JDBC, servicios, colas).
+- Deja evidencias en clases y módulos clave para revisión técnica.
+
+## Arquitectura
+
+```mermaid
+flowchart LR
+  UI[UI / API] --> SVC[UserManagementService (REST)]
+  SVC --> BP[BP GetUserList / Lock / Unlock]
+  BP --> BO[SAPOperation + JavaGatewayService]
+  BO --> SAP[SAP]
+  SAP --> BO --> BP --> SVC --> UI
+```
+
+## Evidencias técnicas (clases representativas)
+
+- `POC01/BO/SAPOperation.cls`
+- `POC01/API/UserManagementService.cls`
+- `POC01/BP/CheckUserExistenceBP.cls`
+- `POC01/BP/GetUserListBP.cls`
+- `POC01/BP/LockUserBP.cls`
+- `POC01/BP/UnlockUserBP.cls`
+
+## Próximo paso recomendado
+
+- **PoC guiada (2–4 semanas)**: definición de criterios de éxito + demo + backlog de hardening/producción.

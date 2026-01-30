@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "iris102",
+    "repo": "https://github.com/christianasmussenb/iris102",
+    "title": "Ingesta CSV con Interoperability + persistencia DB",
+    "featured": false
+  },
+  {
+    "slug": "iris103",
+    "repo": "https://github.com/christianasmussenb/iris103",
+    "title": "Abandoned Cart Recovery (VTEX \u2194 SAP \u2194 Email)",
+    "featured": true
+  },
+  {
+    "slug": "iris104",
+    "repo": "https://github.com/christianasmussenb/iris104",
+    "title": "Operaci\u00f3n SAP desde IRIS: gesti\u00f3n de usuarios",
+    "featured": true
+  },
+  {
+    "slug": "iris105",
+    "repo": "https://github.com/christianasmussenb/iris105",
+    "title": "No-Show Predictor para agendas cl\u00ednicas (IntegratedML)",
+    "featured": true
+  },
+  {
+    "slug": "iris106",
+    "repo": "https://github.com/christianasmussenb/iris106",
+    "title": "ETL + Cubos de facturaci\u00f3n/cartera desde SAP",
+    "featured": false
+  },
+  {
+    "slug": "iris107",
+    "repo": "https://github.com/christianasmussenb/iris107",
+    "title": "Portal CSP: login/home/feedback (GCSP pages)",
+    "featured": false
+  },
+  {
+    "slug": "iris108",
+    "repo": "https://github.com/christianasmussenb/iris108",
+    "title": "Analytics conversacional: Cubos BI + Custom GPT Actions",
+    "featured": true
+  },
+  {
+    "slug": "movie-frontend",
+    "repo": "https://github.com/christianasmussenb/movie-frontend",
+    "title": "Sample REST endpoint (personREST)",
+    "featured": false
+  },
+  {
+    "slug": "pets",
+    "repo": "https://github.com/christianasmussenb/pets",
+    "title": "PETS demo: booking + disponibilidad + notificaciones",
+    "featured": false
+  }
+]
