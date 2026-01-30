@@ -47,3 +47,11 @@ Contenido en Markdown/MDX...
 - Build command: `npm run build`
 - Output directory: `dist`
 - Dominio objetivo: `iris.myallsupport.cl`
+
+- FORMULARIO: contiene todo el contenido y estilos en línea. El formulario de contacto envía a Formspree (`action="https://formspree.io/f/xeoyrnwz"`) y el CTA de agenda usa Calendly.
+
+## Direcciones (footer)
+- 🇺🇸 Estados Unidos: 104 Ronda Ann LN Hot Springs, Arkansas 71909-9645
+- 🇲🇽 México: Lago Alberto 442 - Suite 530, Anáhuac II Sección, Miguel Hidalgo, CDMX
+- 🇨🇱 Chile: El Clonqui 1077, Vitacura, Santiago, R. Metropolitana
+- 🇨🇴 Colombia: AV 7 NORTE # 25 N - 147 OF 101, Cali - Valle
