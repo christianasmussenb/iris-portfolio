@@ -26,7 +26,7 @@ const items = featured.map(p => ({
         </p>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn" href="/pocs">Explorar PoCs</a>
-          <a class="btn" href="/contact">Agendar demo</a>
+          <a class="btn secondary" href="/contact">Agendar demo</a>
         </div>
       </div>
 
@@ -59,22 +59,37 @@ const items = featured.map(p => ({
   </section>
 
   <section style="margin-top: 18px;">
-    <div class="card" style="padding: 16px; border-radius: 22px;">
+    <style>
+      .impact-card {
+        background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.14);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.26);
+        border-radius: 18px;
+        transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease, background 140ms ease;
+      }
+      .impact-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(125,211,252,0.55);
+        box-shadow: 0 14px 32px rgba(0,0,0,0.32);
+        background: linear-gradient(135deg, rgba(125,211,252,0.18), rgba(167,139,250,0.10));
+      }
+    </style>
+    <div class="card impact-card" style="padding: 16px; border-radius: 22px;">
       <h2 style="font-size: 18px; margin-bottom: 10px;">¿Cómo usamos IRIS para generar impacto?</h2>
       <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;">
-        <div class="card" style="padding: 14px;">
+        <div class="card impact-card" style="padding: 14px;">
           <div style="font-weight:700;">Integración de sistemas</div>
           <div class="muted">SAP, eCommerce, CRMs, bases de datos — con trazabilidad y operación.</div>
         </div>
-        <div class="card" style="padding: 14px;">
+        <div class="card impact-card" style="padding: 14px;">
           <div style="font-weight:700;">Interoperabilidad y ETL</div>
           <div class="muted">Pipelines controlados con colas, retries, validación y auditoría.</div>
         </div>
-        <div class="card" style="padding: 14px;">
+        <div class="card impact-card" style="padding: 14px;">
           <div style="font-weight:700;">Analytics & BI</div>
           <div class="muted">Cubes, facts, modelos dimensionales y reporting de gestión.</div>
         </div>
-        <div class="card" style="padding: 14px;">
+        <div class="card impact-card" style="padding: 14px;">
           <div style="font-weight:700;">ML aplicado</div>
           <div class="muted">Modelos integrados al flujo operacional (ej. predicción de no-show).</div>
         </div>

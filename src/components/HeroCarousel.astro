@@ -19,10 +19,27 @@ const { items = [] } = Astro.props;
   }
   .rail::-webkit-scrollbar { height: 10px; }
   .rail::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.14); border-radius: 999px; }
-  .slide { scroll-snap-align: start; padding: 16px; border-radius: 18px; }
-  .slide h3 { font-size: 18px; margin-bottom: 6px; }
-  .slide p { margin: 0 0 12px; }
+  .slide {
+    scroll-snap-align: start;
+    padding: 16px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.14);
+    color: var(--text);
+    text-decoration: none;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.28);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  }
+  .slide:hover {
+    transform: translateY(-4px);
+    border-color: rgba(125,211,252,0.55);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.34);
+    background: linear-gradient(135deg, rgba(125,211,252,0.18), rgba(167,139,250,0.10));
+  }
+  .slide h3 { font-size: 18px; margin-bottom: 6px; color: #e8f4ff; letter-spacing:-0.1px; }
+  .slide p { margin: 0 0 12px; color: var(--muted); }
   .pills { display:flex; flex-wrap:wrap; gap: 8px; margin-bottom: 14px; }
+  .pill { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.18); }
 </style>
 
 <div class="wrap">

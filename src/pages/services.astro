@@ -2,7 +2,22 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout title="Servicios | MyAllSupport | IRIS Solutions">
-  <section class="card" style="padding: 16px; border-radius: 22px;">
+  <style>
+    .service-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.26);
+      transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease, background 140ms ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(125,211,252,0.55);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.32);
+      background: linear-gradient(135deg, rgba(125,211,252,0.18), rgba(167,139,250,0.10));
+    }
+  </style>
+
+  <section class="card service-card" style="padding: 16px; border-radius: 22px;">
     <h1 style="font-size: 22px; margin-bottom: 6px;">Servicios sobre InterSystems IRIS</h1>
     <p class="muted" style="margin:0; line-height:1.7;">
       Enfoque “rápido y comprobable”: PoCs breves, alto impacto, y ruta clara a producción.
@@ -10,7 +25,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <section style="margin-top: 12px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;">
-    <div class="card" style="padding: 14px;">
+    <div class="card service-card" style="padding: 14px;">
       <h2 style="font-size: 16px; margin-bottom: 6px;">PoC (2–4 semanas)</h2>
       <ul class="muted" style="margin:0; line-height:1.75;">
         <li>Definición de caso de uso + criterios de éxito</li>
@@ -18,7 +33,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <li>Repo + documentación + plan de escalamiento</li>
       </ul>
     </div>
-    <div class="card" style="padding: 14px;">
+    <div class="card service-card" style="padding: 14px;">
       <h2 style="font-size: 16px; margin-bottom: 6px;">Integración & Interop</h2>
       <ul class="muted" style="margin:0; line-height:1.75;">
         <li>SAP / JDBC / APIs / Webhooks</li>
@@ -26,7 +41,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <li>Hardening y operación</li>
       </ul>
     </div>
-    <div class="card" style="padding: 14px;">
+    <div class="card service-card" style="padding: 14px;">
       <h2 style="font-size: 16px; margin-bottom: 6px;">Analytics & ML</h2>
       <ul class="muted" style="margin:0; line-height:1.75;">
         <li>Modelos dimensionales / Cubos</li>
