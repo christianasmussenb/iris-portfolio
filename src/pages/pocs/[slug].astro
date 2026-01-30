@@ -1,12 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getEntry } from "astro:content";
+import { getEntry, getCollection } from "astro:content";
 
 const { slug } = Astro.params;
 const entry = await getEntry("pocs", slug);
 if (!entry) throw new Error("PoC not found: " + slug);
 
-const { Content, data } = entry;
+const { Content } = await entry.render();
+const { data } = entry;
+
+export async function getStaticPaths() {
+  const all = await getCollection("pocs");
+  return all.map((p) => ({ params: { slug: p.slug } }));
+}
 ---
 <BaseLayout title={`${data.title} | MyAllSupport | IRIS Solutions`} description={data.subtitle}>
   <section class="card" style="padding: 16px; border-radius: 22px;">
